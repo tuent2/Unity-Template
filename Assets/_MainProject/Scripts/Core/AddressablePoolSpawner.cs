@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using GameUp.Core;
+using Tuent.Core;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -9,7 +9,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 namespace Gameplay.Core
 {
     /// <summary>
-    /// Load Addressable prefab (cache) rồi spawn/despawn qua GUPool.
+    /// Load Addressable prefab (cache) rồi spawn/despawn qua TPool.
     /// </summary>
     public static class AddressablePoolSpawner
     {
@@ -38,16 +38,16 @@ namespace Gameplay.Core
             Load(GetKey(reference), reference?.RuntimeKey, prefab => onDone?.Invoke(prefab));
 
         public static void Spawn(string address, Action<GameObject> onSpawned, Transform parent = null, bool worldPositionStays = false) =>
-            Load(GetKey(address), address, prefab => onSpawned?.Invoke(prefab ? GUPool.Spawn(prefab, parent, worldPositionStays) : null));
+            Load(GetKey(address), address, prefab => onSpawned?.Invoke(prefab ? TPool.Spawn(prefab, parent, worldPositionStays) : null));
 
         public static void Spawn(AssetReference reference, Action<GameObject> onSpawned, Transform parent = null, bool worldPositionStays = false) =>
-            Load(GetKey(reference), reference?.RuntimeKey, prefab => onSpawned?.Invoke(prefab ? GUPool.Spawn(prefab, parent, worldPositionStays) : null));
+            Load(GetKey(reference), reference?.RuntimeKey, prefab => onSpawned?.Invoke(prefab ? TPool.Spawn(prefab, parent, worldPositionStays) : null));
 
         public static void Spawn(string address, Vector3 pos, Quaternion rot, Action<GameObject> onSpawned, Transform parent = null) =>
-            Load(GetKey(address), address, prefab => onSpawned?.Invoke(prefab ? GUPool.Spawn(prefab, pos, rot, parent) : null));
+            Load(GetKey(address), address, prefab => onSpawned?.Invoke(prefab ? TPool.Spawn(prefab, pos, rot, parent) : null));
 
         public static void Spawn(AssetReference reference, Vector3 pos, Quaternion rot, Action<GameObject> onSpawned, Transform parent = null) =>
-            Load(GetKey(reference), reference?.RuntimeKey, prefab => onSpawned?.Invoke(prefab ? GUPool.Spawn(prefab, pos, rot, parent) : null));
+            Load(GetKey(reference), reference?.RuntimeKey, prefab => onSpawned?.Invoke(prefab ? TPool.Spawn(prefab, pos, rot, parent) : null));
 
         public static Task<GameObject> SpawnAsync(string address, Transform parent = null, bool worldPositionStays = false)
         {
@@ -94,8 +94,8 @@ namespace Gameplay.Core
         public static void Despawn(GameObject instance, float delay = 0f)
         {
             if (!instance) return;
-            if (delay > 0f) GUPool.DeSpawn(instance, delay);
-            else GUPool.DeSpawn(instance);
+            if (delay > 0f) TPool.DeSpawn(instance, delay);
+            else TPool.DeSpawn(instance);
         }
 
         public static void Despawn(Component instance, float delay = 0f)
@@ -105,12 +105,12 @@ namespace Gameplay.Core
 
         public static void DespawnAll(string address)
         {
-            if (TryGetPrefab(GetKey(address), out var prefab)) GUPool.DeSpawnAll(prefab);
+            if (TryGetPrefab(GetKey(address), out var prefab)) TPool.DeSpawnAll(prefab);
         }
 
         public static void DespawnAll(AssetReference reference)
         {
-            if (TryGetPrefab(GetKey(reference), out var prefab)) GUPool.DeSpawnAll(prefab);
+            if (TryGetPrefab(GetKey(reference), out var prefab)) TPool.DeSpawnAll(prefab);
         }
 
         public static void Release(string address, bool despawnAll = true) =>
@@ -130,7 +130,7 @@ namespace Gameplay.Core
         {
             if (string.IsNullOrEmpty(key) || loadKey == null)
             {
-                GULogger.Error(LogTag, "Invalid addressable key.");
+                TLogger.Error(LogTag, "Invalid addressable key.");
                 onReady?.Invoke(null);
                 return;
             }
@@ -171,7 +171,7 @@ namespace Gameplay.Core
                 entry.IsLoading = false;
                 if (h.Status != AsyncOperationStatus.Succeeded || !h.Result)
                 {
-                    GULogger.Error(LogTag, $"Load failed: '{key}' ({h.Status})");
+                    TLogger.Error(LogTag, $"Load failed: '{key}' ({h.Status})");
                     if (h.IsValid()) Addressables.Release(h);
                     Cache.Remove(key);
                     FlushWaiters(entry, null);
@@ -205,7 +205,7 @@ namespace Gameplay.Core
         private static void ReleaseKey(string key, bool despawnAll)
         {
             if (string.IsNullOrEmpty(key) || !Cache.TryGetValue(key, out var entry)) return;
-            if (despawnAll && entry.Prefab && GUPoolers.Instance != null) GUPool.DeSpawnAll(entry.Prefab);
+            if (despawnAll && entry.Prefab && TPoolers.Instance != null) TPool.DeSpawnAll(entry.Prefab);
             if (entry.Handle.IsValid()) Addressables.Release(entry.Handle);
             Cache.Remove(key);
         }
@@ -213,7 +213,7 @@ namespace Gameplay.Core
         private static string GetKey(string address)
         {
             if (!string.IsNullOrWhiteSpace(address)) return address;
-            GULogger.Error(LogTag, "Address is null or empty.");
+            TLogger.Error(LogTag, "Address is null or empty.");
             return null;
         }
 
@@ -221,7 +221,7 @@ namespace Gameplay.Core
         {
             if (reference == null || !reference.RuntimeKeyIsValid())
             {
-                GULogger.Error(LogTag, "AssetReference is null or invalid.");
+                TLogger.Error(LogTag, "AssetReference is null or invalid.");
                 return null;
             }
 

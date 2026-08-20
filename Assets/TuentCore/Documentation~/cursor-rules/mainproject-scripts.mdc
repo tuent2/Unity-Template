@@ -1,0 +1,10 @@
+---
+description: Ranh giới script game vs Tuent Core embedded
+globs: Assets/_MainProject/Scripts/**/*.cs
+---
+
+# _MainProject scripts
+
+- Gọi Core qua `using Tuent.Core` / `Tuent.Core.UI` — không tự chế logger/pool/singleton.
+- Type game mới: namespace riêng (`Gameplay.*`), không đặt trong `Tuent.Core*`.
+- Không sửa framework trong `Assets/TuentCore` khi chỉ làm feature game (trừ khi mở rộng Core có chủ đích).

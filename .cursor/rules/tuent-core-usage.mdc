@@ -1,0 +1,19 @@
+---
+description: Tuent Core embedded — dùng API có sẵn, không tự chế hạ tầng
+globs: Assets/_MainProject/Scripts/**/*.cs
+---
+
+# Tuent Core
+
+Framework: `Assets/TuentCore/` — namespace `Tuent.Core`, `Tuent.Core.UI`.
+
+| Cần | Dùng |
+|---|---|
+| Log | `TLogger` — không `Debug.Log` trong feature |
+| Singleton Mono | `MonoSingleton<T>` |
+| Pool | `TPool`, `TPoolers` |
+| UI | `UIScreen`, `UIPopup`, `ScreenData`, `PopupData` |
+| Save | `BaseDataSave<T>`, `LocalStorageUtils` |
+| Audio | `AudioManager`, `AudioDatabase` |
+
+Code game mới → `_MainProject`, namespace riêng (`Gameplay.*`).

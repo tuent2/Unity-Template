@@ -28,7 +28,7 @@ namespace Gameplay.Core.Editor
         private bool _isScanning;
         private string _status = "Chưa scan.";
 
-        [MenuItem("GameUp/Tools/Unused Image Cleaner")]
+        [MenuItem("Tuent/Tools/Unused Image Cleaner")]
         public static void Open()
         {
             var window = GetWindow<UnusedImageCleanerWindow>("Unused Images");

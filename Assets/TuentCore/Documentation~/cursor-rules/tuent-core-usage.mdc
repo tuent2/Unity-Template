@@ -1,0 +1,25 @@
+# Tuent Core — tra API trước khi viết mới
+
+Nguồn: `Assets/TuentCore/Runtime/`.
+
+| Cần | Type | Namespace |
+|---|---|---|
+| Log | `TLogger` | `Tuent.Core` |
+| Singleton Mono | `MonoSingleton<T>` | `Tuent.Core` |
+| Singleton C#/SO | `Singleton<T>`, `ScriptableObjectSingleton<T>`, `ResourcesSingleton` | `Tuent.Core` |
+| Event type-safe | `Signal`, `BaseSignal`, `IBaseSignal` | `Tuent.Core` |
+| Pool | `TPool`, `TPoolers`, `IPoolable` | `Tuent.Core` |
+| Save | `BaseDataSave<T>`, `LocalStorageUtils`, `JsonHelper` | `Tuent.Core` |
+| Audio | `AudioManager`, `AudioDatabase`, `AudioIdentity` | `Tuent.Core` |
+| Addressables | `ComponentReference<T>`, `DataReference`, `AddressableDataHolder` | `Tuent.Core` |
+| UI | `UIScreen`, `UIPopup`, `ScreenData`, `PopupData` | `Tuent.Core.UI` |
+| Helper | `ObjectFinder`, `Loading`, `Toast` | `Tuent.Core.UI` |
+
+```csharp
+using Tuent.Core;
+
+TLogger.Log("Gameplay", $"Wave {index}");
+var go = TPool.Spawn(prefab, parent);
+```
+
+Code game mới → `Assets/_MainProject/Scripts/`, namespace riêng (không `Tuent.Core*`).

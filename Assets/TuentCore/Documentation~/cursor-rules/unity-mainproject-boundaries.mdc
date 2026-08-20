@@ -1,0 +1,10 @@
+---
+description: Ranh giới _MainProject vs Tuent Core
+globs: Assets/_MainProject/**/*
+---
+
+# _MainProject boundaries
+
+- Game logic chỉ trong `Assets/_MainProject/`.
+- Dùng `TLogger`, `TPool`, `UIScreen`/`UIPopup` từ Tuent Core — không tự chế lại.
+- Không đặt type game trong namespace `Tuent.Core*`.

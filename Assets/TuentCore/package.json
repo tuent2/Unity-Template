@@ -1,0 +1,27 @@
+{
+  "name": "com.tuent.core",
+  "version": "1.0.0",
+  "displayName": "Tuent Core",
+  "description": "Framework nội bộ cho Unity template — logger, singleton, pool, UI, audio, save. Cài DOTween rồi chạy Tuent/Project/TuentCore Installer.",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.addressables": "1.22.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuent2/Unity-Template.git",
+    "directory": "Assets/TuentCore"
+  },
+  "author": {
+    "name": "tuent2",
+    "url": "https://github.com/tuent2/Unity-Template"
+  },
+  "keywords": [
+    "tuent",
+    "framework",
+    "core",
+    "ui",
+    "singleton",
+    "pool"
+  ]
+}

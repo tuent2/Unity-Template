@@ -1,5 +1,5 @@
 ---
-description: Implement một story Unity theo increment nhỏ, ưu tiên API GameUp Core
+description: Implement một story Unity theo increment nhỏ, ưu tiên API Tuent Core
 argument-hint: [story / task cần làm]
 ---
 

@@ -1,10 +1,10 @@
 ---
 description: Installer flow guardrails for GameUp package install and update
-globs: Assets/GameUpSDK/Editor/Installer/**/*.cs
+globs: Assets/LegacySDK/Editor/Installer/**/*.cs
 alwaysApply: false
 ---
 
-# GameUp SDK Installer Flow
+# Tuent SDK Installer Flow
 
 - Treat install and update as two explicit flows with clear completion checks.
 - Before changing installer logic, verify package dependencies and define-symbol side effects.

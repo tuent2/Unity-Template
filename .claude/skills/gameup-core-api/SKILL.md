@@ -1,11 +1,11 @@
 ---
 name: gameup-core-api
-description: Tra cứu API GameUp Core và mẫu code chuẩn (logger, singleton, signal, pool, UI screen/popup, save, audio, addressables, bootstrap). Dùng trước khi viết bất kỳ class hạ tầng nào, hoặc khi cần biết Core đã có sẵn thứ gì.
+description: Tra cứu API Tuent Core và mẫu code chuẩn (logger, singleton, signal, pool, UI screen/popup, save, audio, addressables, bootstrap). Dùng trước khi viết bất kỳ class hạ tầng nào, hoặc khi cần biết Core đã có sẵn thứ gì.
 ---
 
-# GameUp Core — tra API trước khi viết mới
+# Tuent Core — tra API trước khi viết mới
 
-Nguồn: `Assets/GameUpCore/Runtime/` (embedded) hoặc `Packages/com.ohze.gameup.core/Runtime/` (UPM).
+Nguồn: `Assets/TuentCore/Runtime/` (embedded) hoặc `Packages/com.ohze.gameup.core/Runtime/` (UPM).
 Nếu cần chi tiết chữ ký hàm → **đọc thẳng file nguồn**, đừng đoán.
 
 ## Bảng tra nhanh

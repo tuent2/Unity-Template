@@ -1,5 +1,5 @@
 ---
-description: Tra API GameUp Core có sẵn cho một nhu cầu, trước khi viết class mới
+description: Tra API Tuent Core có sẵn cho một nhu cầu, trước khi viết class mới
 argument-hint: [nhu cầu, vd: "lưu tiến độ người chơi", "popup shop", "spawn đạn"]
 ---
 

@@ -9,7 +9,7 @@ alwaysApply: false
 ## Phạm vi
 
 - Chỉ đặt **logic/feature game** (Gameplay, UI game, Tutorial, Audio ID, helper project…).
-- **Không** copy-paste hoặc “fork” lại lớp đã có trong GameUp Core; gọi Core qua `using GameUp.Core` / `GameUp.Core.UI`.
+- **Không** copy-paste hoặc “fork” lại lớp đã có trong Tuent Core; gọi Core qua `using GameUp.Core` / `GameUp.Core.UI`.
 
 ## Cấu trúc thư mục
 

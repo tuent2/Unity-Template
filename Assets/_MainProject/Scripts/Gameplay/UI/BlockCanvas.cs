@@ -1,4 +1,4 @@
-using GameUp.Core;
+using Tuent.Core;
 using UnityEngine;
 
 namespace Gameplay.UI
@@ -46,7 +46,7 @@ namespace Gameplay.UI
         {
             if (_count <= 0)
             {
-                GULogger.Warning(nameof(BlockCanvas), "PopBlock called when Count is already 0.");
+                TLogger.Warning(nameof(BlockCanvas), "PopBlock called when Count is already 0.");
                 return;
             }
 

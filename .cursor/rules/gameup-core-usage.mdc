@@ -1,15 +1,15 @@
 ---
-description: Tận dụng GameUp Core (API, namespace, UPM) khi viết C# Unity
+description: Tận dụng Tuent Core (API, namespace, UPM) khi viết C# Unity
 alwaysApply: true
 ---
 
-# GameUp Core — dùng đúng lực framework
+# Tuent Core — dùng đúng lực framework
 
 Khi gợi ý/sửa C# trong project này, **ưu tiên API có sẵn** thay vì tự làm lại (singleton tự chế, pool thủ công, `Debug.Log`, v.v.).
 
 ## Vị trí code Core
 
-- **Embedded:** `Assets/GameUpCore/…`
+- **Embedded:** `Assets/TuentCore/…`
 - **UPM (đã cài package):** `Packages/com.ohze.gameup.core/…` — **không** chỉnh sửa trực tiếp nếu đây là bản restore từ registry/Git; mở rộng bằng code game tại `Assets/_MainProject/`.
 
 Asmdef runtime: `GameUp.Core.Runtime` (`GameUp.Core`, `GameUp.Core.Serializer`), `GameUp.UI.Runtime` (`GameUp.Core.UI`, cần DOTween + define `DOTween__DEPENDENCIES_INSTALLED` theo installer).

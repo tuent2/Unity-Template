@@ -1,5 +1,5 @@
 ---
-description: GameUp Core khi cài qua UPM (Packages) — đường dẫn và giới hạn sửa
+description: Tuent Core khi cài qua UPM (Packages) — đường dẫn và giới hạn sửa
 globs: Packages/com.ohze.gameup.core/**/*.cs
 alwaysApply: false
 ---
@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Đường dẫn
 
-- Mã nguồn runtime: `Packages/com.ohze.gameup.core/Runtime/…` (tương đương `Assets/GameUpCore/Runtime/…` khi dev embedded).
+- Mã nguồn runtime: `Packages/com.ohze.gameup.core/Runtime/…` (tương đương `Assets/TuentCore/Runtime/…` khi dev embedded).
 - Editor: `…/Editor/…`, prefab mẫu trong package tương tự cấu trúc `Prefab/`.
 
 ## Quy tắc khi Agent mở file trong `Packages/com.ohze.gameup.core/`

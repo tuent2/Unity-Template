@@ -2,11 +2,10 @@
   "dependencies": {
     "com.boxqkrtm.ide.cursor": "https://github.com/boxqkrtm/com.unity.ide.cursor.git",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
-    "com.ohze.gameup.core": "https://github.com/ohze/gameup-unity-template.git?path=Assets/GameUpCore",
-    "com.ohze.gameup.sdk": "https://github.com/ohze/gameup-unity-template.git?path=Assets/GameUpSDK",
     "com.srf.srdebugger": "file:com.srf.srdebugger-1.0.0.tgz",
     "com.unity.2d.animation": "13.0.5",
     "com.unity.2d.pixel-perfect": "5.1.1",
+    "com.unity.addressables": "2.9.1",
     "com.unity.collab-proxy": "2.13.3",
     "com.unity.feature.2d": "2.0.2",
     "com.unity.ide.rider": "3.0.38",
